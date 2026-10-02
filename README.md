@@ -22,6 +22,6 @@
 5. Format the coordinates to exactly 4 decimal places: Latitude `40.2513`, Longitude `58.4371`.
 6. Wrap the coordinates in the required flag format: `sunctf26{40.2513,58.4371}`.
 
-![The Eternal Flame Image](./docs/the_eternal_flame.png)
+![The Eternal Flame Image](the_eternal_flame.png)
 
 </details>
