@@ -1,27 +1,33 @@
-# The Eternal Flame
+# SunCTF 2026 challenges
 
-| Key | Value |
-| --- | --- |
-| Challenge Name | The Eternal Flame |
-| Author | lilsallix05 |
-| Category | OSINT |
-| Description | Our operatives intercepted this image from a traveler wandering through a vast desert. We know this fiery pit has been burning for decades, but we need to pinpoint its exact location. Find the coordinates of the center of this crater.<br><br>**Flag Format:** sunctf26{latitude,longitude} in decimal degrees, rounded to exactly 4 decimal places. (Example: `sunctf26{XX.XXXX,XX.XXXX}`)<br><br>**Hint:** The photo was taken in Central Asia. Use Google Maps to explore it :)) |
-| Challenge Type | Static |
-| Flag | sunctf26{40.2513,58.4371} |
-| Score | 100 |
+Two CTF challenges I created for **SunCTF 2026**, the on-site Jeopardy CTF run by the Sunway Cybersecurity Club in Malaysia (6 September 2026).
 
-## Solution
+| Challenge | Category | Points | Type | Folder |
+| --- | --- | --- | --- | --- |
+| [The Eternal Flame](./osint_the-eternal-flame) | OSINT | 100 | Static (one image) | `osint_the-eternal-flame/` |
+| [The Gaslit Gallery](./web_gaslit-gallery) | Web | 200 | Dynamic (Flask in Docker) | `web_gaslit-gallery/` |
 
-<details>
-<summary>Click to expand</summary>
+## The Eternal Flame · OSINT · 100
 
-1. Analyze the provided image of the burning crater in a desert.
-2. Using the hint that the location is in Central Asia, a reverse image search or a keyword search for "burning crater desert Central Asia" reveals the location as the **Darvaza Gas Crater** (also known as the "Gates of Hell") in Turkmenistan.
-3. Locate the Darvaza Gas Crater on Google Maps.
-4. Extract the exact coordinates of the center of the crater.
-5. Format the coordinates to exactly 4 decimal places: Latitude `40.2513`, Longitude `58.4371`.
-6. Wrap the coordinates in the required flag format: `sunctf26{40.2513,58.4371}`.
+One photo of a desert crater that has been burning for decades. Find the exact coordinates of its centre.
 
-![The Eternal Flame Image](the_eternal_flame.png)
+## The Gaslit Gallery · Web · 200
 
-</details>
+An "AI-secured" admin portal built to mislead AI-assisted solvers: decoy content in the front end sends a language model down the wrong path, so players have to read the code themselves.
+
+Run it locally (Docker):
+
+```bash
+cd web_gaslit-gallery
+docker compose up --build -d
+# open http://localhost:8080
+docker compose down
+```
+
+## Spoilers
+
+Each folder has its own README with the full brief, the flag format and a collapsed **Solution** section that includes the flag. Try the challenge first.
+
+## Author
+
+Selbinyyaz (Salli) Odekova · [lilsallix05](https://github.com/lilsallix05) · [Portfolio](https://selbinyyaz-odekova.web.app)
