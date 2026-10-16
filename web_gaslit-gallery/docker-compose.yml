@@ -1,0 +1,13 @@
+version: '3.8'
+
+services:
+  web_gaslit_gallery:
+    build: .
+    ports:
+      - "8080:8080"
+    restart: always
+    # Optional: Set memory limits to prevent automated AI tools from crashing the container during the event
+    deploy:
+      resources:
+        limits:
+          memory: 128M
