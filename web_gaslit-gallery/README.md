@@ -7,7 +7,6 @@
 | **Category** | Web |
 | **Description** | We secured our new admin portal with military-grade AI threat intelligence. We are so confident in our automated defenses that we didn't even bother hiding our frontend authentication logic. Prove you're a real human hacker. |
 | **Challenge Type** | Dynamic |
-| **Flag** | `sunctf26{41_c4nn0t_p4rs3_r34l1ty}` |
 | **Score** | 200 |
 
 ## Instructions to test challenge
@@ -16,19 +15,20 @@ The server runs on a lightweight Flask backend. No external API keys or configur
 
 ### Prerequisites
 
-1. Docker and Docker Compose for Linux machines. Docker Desktop for Window machines.
+1. Docker and Docker Compose on Linux, or Docker Desktop on Windows and macOS.
 
 ### Steps
 
-1. `cd web_gaslit-gallery` and `docker-compose up --build -d` (This builds the image and runs it in the background).
+1. `cd web_gaslit-gallery` and `docker compose up --build -d` (this builds the image and runs it in the background).
 2. Visit `http://localhost:8080`
-3. Test it yourself or follow instructions from "Solution"
-4. When done testing, `docker-compose down` to shut down the image.
+3. Test it yourself or follow the instructions under "Solution".
+4. When done testing, `docker compose down` to shut it down.
 
 ## Solution
 
 <details>
-<summary>Click to expand</summary>
+<summary>Click to expand (spoilers, including the flag)</summary>
+
 Medium difficulty challenge.
 
 Players are expected to realize that using an LLM to analyze the source code will result in a hallucinated SQL injection path due to hidden prompt injections (HTML entities and SVG metadata). The actual vulnerability is a client-side role generation flaw.
@@ -42,4 +42,7 @@ Players are expected to realize that using an LLM to analyze the source code wil
 5. Encode "nimda" in Base64 to get `bmltZGE=`.
 6. Open your browser's application tab/storage settings, and change the `session` cookie value to `bmltZGE=`.
 7. Refresh the page to gain admin access and retrieve the flag!
+
+**Flag:** `sunctf26{41_c4nn0t_p4rs3_r34l1ty}`
+
 </details>
